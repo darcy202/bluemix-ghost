@@ -1,0 +1,37 @@
+{
+  "name": "ghost-cloudinary-store",
+  "version": "1.0.2",
+  "description": "A Cloudinary image storage module for Ghost blogs.",
+  "main": "index.js",
+  "keywords": [
+    "cloudinary",
+    "ghost",
+    "blog",
+    "image",
+    "storage",
+    "module"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sethbrasile/ghost-cloudinary-store"
+  },
+  "bugs": {
+    "url": "https://github.com/sethbrasile/ghost-cloudinary-store/issues"
+  },
+  "author": {
+    "name": "Seth Brasile",
+    "email": "seth.brasile@gmail.com",
+    "url": "http://sethbrasile.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "1.2.x"
+  },
+  "readme": "**IMPORTANT**: You **MUST** be running Ghost 0.6.0 or later. Previous versions of Ghost do not support external storage solutions.\n\n**PLEASE** create an issue if you have any problems.\n\nFancy stuff** is not currently supported\n\n<span style=\"font-size: 0.6em;\">\n**Cloudinary has some \"advanced configuration options\" for Pro users and etc.. that this module does not currently handle.\n\n# To Use\n\nNote: There are some funky folder-renaming steps here due to the way that Ghost wants it's storage directory structure to be\n\n\n## NPM Installation Method\n\n1. Navigate to Ghost's `content` directory and run `npm install ghost-cloudinary-store --prefix ./`\n\n2. Rename the `node_modules` directory that is created to `storage`\n\n3. Follow the instructions below for [editing config.js][1]\n\n\n## Git Installation Method\n\nNote: The `master` branch reflects what is published on NPM\n\n1. Navigate to Ghost's `content` directory and create a directory called `storage`\n\n2. Navigate into this new `storage` directory and run `git clone https://github.com/sethbrasile/ghost-cloudinary-store.git`\n\n3. Navigate into `ghost-cloudinary-store` and run `npm install`\n\n4. Follow the instructions below for [editing config.js][1]\n\n## Editing config.js\n\nIn Ghost's `config.js` (the file where you set your URL, mail settings, etc..) add a block to whichever environment you're using (`production`, `development`, etc...) as follows:\n\n<span style=\"font-size: 0.6em;\">\nNote: These values can be obtained from your Cloudinary management console.\n\n```javascript\nstorage: {\n    active: 'ghost-cloudinary-store',\n    'ghost-cloudinary-store': {\n        cloud_name: 'yourCloudName',\n        api_key: 'yourApiKey',\n        api_secret: 'yourApiSecret'\n    }\n}\n```\n\nHere's a full example:\n\n```javascript\ndevelopment: {\n    url: 'http://localhost:2368',\n    storage: {\n        active: 'ghost-cloudinary-store',\n        'ghost-cloudinary-store': {\n            cloud_name: 'xxxxxxx',\n            api_key: 'xxxxxxx',\n            api_secret: 'xxxxxxxx'\n        }\n    },\n    database: {\n        client: 'sqlite3',\n        connection: {\n            filename: path.join(__dirname, '/content/data/ghost-dev.db')\n        },\n        debug: false\n    },\n    server: {\n        // Host to be passed to node's `net.Server#listen()`\n        host: '127.0.0.1',\n        // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`\n        port: '2368'\n    },\n    paths: {\n        contentPath: path.join(__dirname, '/content/')\n    }\n},\n```\n\n[1]: #editing-configjs\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/sethbrasile/ghost-cloudinary-store",
+  "_id": "ghost-cloudinary-store@1.0.2",
+  "_shasum": "d65b4a99f45c7d0d287c8d8b80a940c2b20077fe",
+  "_from": "ghost-cloudinary-store@",
+  "_resolved": "https://registry.npmjs.org/ghost-cloudinary-store/-/ghost-cloudinary-store-1.0.2.tgz"
+}
