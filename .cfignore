@@ -4,3 +4,4 @@ content/data/*.db
 !content/storage/ghost-cloudinary-store/node_modules
 !content/storage/ghost-cloudinary-store/node_modules/cloudinary
 content/images/2015
+Gruntfile.js
