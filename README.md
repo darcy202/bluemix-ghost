@@ -33,6 +33,7 @@ More [install docs](http://support.ghost.org/installation/) here in case you got
 
 
 Or download this repo and run:
+
 1. `cf create-space myblog`
 1. `cf target -s myblog`
 1. `cf create-service cleardb spark ghost-mysql-db`
@@ -41,14 +42,15 @@ Or download this repo and run:
 
 
 Any image uploads will be lost on app restart, as the file system is not persisted. If you need image/file storage you can:
+
 1. create an account at http://cloudinary.com
 1. uncomment the cloudinary config in config.js (look for // UNCOMMENT TO USE CLOUDINARY FILE STORE)
 1. create an environment variable containing your cloudinary credentials, in the format of:
-CLOUDINARY='{"cloud_name":"...", "api_key":"...", "api_secret":"..."}'
-
 
 `CLOUDINARY='{"cloud_name":"...", "api_key":"...", "api_secret":"..."}'`
 
-1. restart your app
+`cf set-env ghost CLOUDINARY '{"cloud_name":"...", "api_key":"...", "api_secret":"..."}'`
 
-`cf restage ghost`
+1. push update and restart app
+
+`cf push ghost`
