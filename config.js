@@ -6,7 +6,11 @@ var path = require('path'),
     config;
 
 // my app config
-var myapp = {};
+var myapp = {
+    cloudinary: {},
+    sendgrid: {},
+    mysql: {}
+};
 myapp.port = (process.env.VCAP_APP_PORT || '2368');
 myapp.host = (process.env.VCAP_APP_HOST || '127.0.0.1');
 myapp.protocol = 'https://';
@@ -36,6 +40,8 @@ if (process.env.VCAP_SERVICES != undefined) {
 
 if (process.env.CLOUDINARY != undefined)
     myapp.cloudinary = JSON.parse(process.env.CLOUDINARY);
+
+console.log(myapp.cloudinary);
 
 // end: my app config
 
@@ -75,14 +81,14 @@ config = {
         // CREATE AN ACCOUNT AT http://cloudinary.com/
         // CREATE CLOUDINARY ENVIRONMENT VAR WITH CREDENTIALS, E.G.:
         // CLOUDINARY='{"cloud_name":"...", "api_key":"...", "api_secret":"..."}'
-        // storage: {
-        //     active: 'ghost-cloudinary-store',
-        //     'ghost-cloudinary-store': {
-        //         cloud_name: myapp.cloudinary.cloud_name,
-        //         api_key: myapp.cloudinary.api_key,
-        //         api_secret: myapp.cloudinary.api_secret
-        //     }
-        // },
+        storage: {
+            active: 'ghost-cloudinary-store',
+            'ghost-cloudinary-store': {
+                cloud_name: myapp.cloudinary.cloud_name,
+                api_key: myapp.cloudinary.api_key,
+                api_secret: myapp.cloudinary.api_secret
+            }
+        },
         server: {
             // Host to be passed to node's `net.Server#listen()`
             host: myapp.host,
