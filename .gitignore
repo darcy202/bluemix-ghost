@@ -3,5 +3,6 @@ content/data/*.db
 *.bak
 !content/storage/ghost-cloudinary-store/node_modules
 !content/storage/ghost-cloudinary-store/node_modules/cloudinary
+!content/storage/ghost-cloudinary-store/node_modules/cloudinary/node_modules
 content/images/2015
 Gruntfile.js
