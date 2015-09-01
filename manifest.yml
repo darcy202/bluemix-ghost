@@ -13,7 +13,7 @@ applications:
   command: node index --production
   env:
     NODE_ENV: production
-    CLOUDINARY: {"cloud_name":"", "api_key":"", "api_secret":""}
+    CLOUDINARY: '{"cloud_name":"", "api_key":"", "api_secret":""}'
   services:
   - ghost-mysql-db
   - ghost-sendgrid
