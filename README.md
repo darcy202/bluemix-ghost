@@ -7,25 +7,6 @@
 [Find full details on Ghost here](https://github.com/tryghost/Ghost)
 
 
-# Quick Start Install
-
-Make sure you've installed Node.js - We recommend the latest **Node v0.10.x** release.
-
-Ghost is also compatible with **Node v0.12** and **io.js v1.2**, but please note that these versions are more likely to run into installation problems. May contain nuts. Please use the [forum](https://ghost.org/forum/installation/) for help.
-
-1. Download this repo
-1. Fire up a terminal
-1. `npm install --production`
-1. Start Ghost!
-    - Local environment: `npm start`
-    - On a server: `npm start --production`
-1. `http://localhost:2368/ghost` :tada:
-
-More [install docs](http://support.ghost.org/installation/) here in case you got stuck.
-
-<a name="getting-started"></a>
-
-
 # Deploying Ghost to IBM Bluemix
 
 
