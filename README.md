@@ -42,6 +42,6 @@ By default any image uploads will be lost on app restart, as the file system is 
 
 ### Configure your new Ghost blog
 
-Visit https://<your ghost blog>/ghost to begin the setup of your new blog.
+Visit https://\<your ghost blog\>/ghost to begin the setup of your new blog.
 
 For more help on using Ghost visit http://support.ghost.org/user-guide/using-ghost/ .
