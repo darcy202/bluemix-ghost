@@ -22,7 +22,11 @@ Or download this repo and run:
 1. `cf push ghost --random-route`
 
 
-Any image uploads will be lost on app restart, as the file system is not persisted. If you need image/file storage you can:
+## File storage
+
+By default any image uploads will be lost on app restart, as the file system is not persisted. If you need image/file storage you'll need to configure one of the storage services.
+
+### File storage: using Cloudinary
 
 1. create an account at http://cloudinary.com
 1. uncomment the cloudinary config in config.js (look for // UNCOMMENT TO USE CLOUDINARY FILE STORE)
