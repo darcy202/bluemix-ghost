@@ -17,7 +17,7 @@ stages:
   triggers:
   - type: stage
   jobs:
-  - name: Deploy to ${CF_SPACE}
+  - name: Deploy ghost blog
     type: deployer
     target:
       url: ${CF_TARGET_URL}
