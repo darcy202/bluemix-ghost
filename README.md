@@ -9,7 +9,6 @@
 
 # Deploying Ghost to IBM Bluemix
 
-
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/darcy202/bluemix-ghost)
 
 
@@ -39,3 +38,10 @@ By default any image uploads will be lost on app restart, as the file system is 
 1. push update and restart app
 
 `cf push ghost`
+
+
+### Configure your new Ghost blog
+
+Visit https://<your ghost blog>/ghost to begin the setup of your new blog.
+
+For more help on using Ghost visit http://support.ghost.org/user-guide/using-ghost/ .
