@@ -9,35 +9,33 @@
 
 # Deploying Ghost to IBM Bluemix
 
+## 1-click button auto deploy
+
+Use this 1-click button to auto deploy a new Ghost blog to your IBM Bluemix account:
+
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/darcy202/bluemix-ghost)
 
+## Or you can manually configure and deploy
 
-Or download this repo and run:
+The following steps detail using the git and cf cli tools:
 
+1. `git clone https://github.com/darcy202/bluemix-ghost.git`
 1. `cf create-space myblog`
 1. `cf target -s myblog`
 1. `cf create-service cleardb spark ghost-mysql-db`
 1. `cf create-service sendgrid free ghost-sendgrid`
-1. `cf push ghost --random-route`
+1. `cf push ghost --random-route` for a quick start, or `cf push ghost -n <unique name for my blog>` to set the subdomain.
 
 
 ## File storage
 
-By default any image uploads will be lost on app restart, as the file system is not persisted. If you need image/file storage you'll need to configure one of the storage services.
+By default any image uploads will be lost on app restart, as the file system is not persisted. If you need image storage you'll need to configure one of the storage services.
 
 ### File storage: using Cloudinary
 
-1. create an account at http://cloudinary.com
-1. uncomment the cloudinary config in config.js (look for // UNCOMMENT TO USE CLOUDINARY FILE STORE)
-1. create an environment variable containing your cloudinary credentials, in the format of:
-
-`CLOUDINARY='{"cloud_name":"...", "api_key":"...", "api_secret":"..."}'`
-
-`cf set-env ghost CLOUDINARY '{"cloud_name":"...", "api_key":"...", "api_secret":"..."}'`
-
-1. push update and restart app
-
-`cf push ghost`
+1. Create an account at http://cloudinary.com
+1. Create an environment variable named CLOUDINARY containing your cloudinary credentials, in the format of `{"cloud_name":"...", "api_key":"...", "api_secret":"..."}`. You can do this via the Bluemix console or using the cf cli with: `cf set-env ghost CLOUDINARY '{"cloud_name":"...", "api_key":"...", "api_secret":"..."}'`
+1. Let Bluemix restage the app to pick up the Cloudinary config or do manually with: `cf restage ghost`
 
 
 ### Configure your new Ghost blog
