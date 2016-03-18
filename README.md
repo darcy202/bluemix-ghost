@@ -31,9 +31,7 @@ The following steps detail using the git and cf cli tools:
 - US South
 - United Kingdom
 
-**Note: **This will not work out of the box in the Sydney region, due to the MySQL DB (from ClearDB) dependency not being available in the Sydney region.
-However, manual steps can be taken to create a MySQL service in this region.
-
+**Note:** This will not work out of the box in the Sydney region, due to the MySQL DB (from ClearDB) dependency not being available in the Sydney region. To run this in the Sydney region, you will need to manually create a MySQL instance named ghost-mysql-db.
 
 
 ## File storage
