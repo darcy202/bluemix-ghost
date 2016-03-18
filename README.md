@@ -26,6 +26,16 @@ The following steps detail using the git and cf cli tools:
 1. `cf push ghost --random-route` for a quick start, or `cf push ghost -n <unique name for my blog>` to set the subdomain.
 
 
+## Supported regions
+
+- US South
+- United Kingdom
+
+**Note: **This will not work out of the box in the Sydney region, due to the MySQL DB (from ClearDB) dependency not being available in the Sydney region.
+However, manual steps can be taken to create a MySQL service in this region.
+
+
+
 ## File storage
 
 By default any image uploads will be lost on app restart, as the file system is not persisted. If you need image storage you'll need to configure one of the storage services.
