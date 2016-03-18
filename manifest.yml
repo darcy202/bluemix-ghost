@@ -3,9 +3,6 @@ declared-services:
   ghost-mysql-db:
     label: cleardb
     plan: spark
-  ghost-sendgrid:
-    label: sendgrid
-    plan: free
 applications:
 - memory: 512M
   instances: 1
@@ -15,4 +12,3 @@ applications:
     NODE_ENV: production
   services:
   - ghost-mysql-db
-  - ghost-sendgrid

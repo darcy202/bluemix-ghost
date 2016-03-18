@@ -23,7 +23,6 @@ The following steps detail using the git and cf cli tools:
 1. `cf create-space myblog`
 1. `cf target -s myblog`
 1. `cf create-service cleardb spark ghost-mysql-db`
-1. `cf create-service sendgrid free ghost-sendgrid`
 1. `cf push ghost --random-route` for a quick start, or `cf push ghost -n <unique name for my blog>` to set the subdomain.
 
 

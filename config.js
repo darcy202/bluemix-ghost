@@ -8,7 +8,6 @@ var path = require('path'),
 // my app config
 var myapp = {
     cloudinary: {},
-    sendgrid: {},
     mysql: {}
 };
 myapp.port = (process.env.VCAP_APP_PORT || '2368');
@@ -29,13 +28,6 @@ if (process.env.VCAP_SERVICES != undefined) {
         console.error('Cannot find cleardb service');
         process.exit(1);
     }
-
-    if (vcap_services.sendgrid != undefined) {
-        myapp.sendgrid = vcap_services.sendgrid[0].credentials;
-    } else {
-        console.error('Cannot find sendgrid service');
-        process.exit(1);
-    }
 }
 
 if (process.env.CLOUDINARY != undefined)
@@ -52,16 +44,6 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: myapp.protocol + myapp.route,
-        mail: {
-            transport: 'SMTP',
-            options: {
-                service: 'Sendgrid',
-                auth: {
-                    user: myapp.sendgrid.username,
-                    pass: myapp.sendgrid.password
-                }
-            }
-        },
         database: {
           client: 'mysql',
           connection: {
