@@ -1,8 +1,4 @@
 ---
-declared-services:
-  ghost-mysql-db:
-    label: cleardb
-    plan: spark
 applications:
 - memory: 512M
   instances: 1

@@ -26,6 +26,7 @@ stages:
       application: ${CF_APP}
     script: |
       #!/bin/bash
+      cf create-service cleardb spark ghost-mysql-db
       cf push "${CF_APP}"
       cf set-env ${CF_APP} CLOUDINARY '{"cloud_name":"...", "api_key":"...", "api_secret":"..."}'
       cf set-env ${CF_APP} NODE_ENV 'production'
